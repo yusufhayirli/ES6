@@ -5,6 +5,7 @@ const photoApple = document.getElementById("photo-apple");
 const photoStrawberry = document.getElementById("photo-strawberry");
 const photoCherry = document.getElementById("photo-cherry");
 
+//call element's attribute by using event
 const photoClick = (event) => {
     const photoId = event.target.attributes['data-img'].value;
     const photo = document.getElementById(photoId);
