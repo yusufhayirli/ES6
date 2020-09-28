@@ -5,8 +5,14 @@ const photoApple = document.getElementById("photo-apple");
 const photoStrawberry = document.getElementById("photo-strawberry");
 const photoCherry = document.getElementById("photo-cherry");
 
-//call element's attribute by using event
+//call element's attribute by using event and make 
+//all images hide and the selected one appears in a loop
 const photoClick = (event) => {
+    const imgList = document.querySelectorAll('img');
+    imgList.forEach((img) => {
+        img.className="hide";
+    })
+
     const photoId = event.target.attributes['data-img'].value;
     const photo = document.getElementById(photoId);
     if (photo.className==="hide"){
@@ -16,34 +22,7 @@ const photoClick = (event) => {
     }
 }
 
-appleLink.addEventListener("click", photoClick);
-
-// () => {
-//     photoStrawberry.className = "hide";
-//     photoCherry.className = "hide";
-//     if (photoApple.className === "hide") {
-//         photoApple.className = "";
-//     } else {
-//         photoApple.className = "hide";
-//     }
-// }
-
-strawberryLink.addEventListener("click", () => {
-    photoApple.className = "hide";
-    photoCherry.className = "hide";
-    if (photoStrawberry.className === "hide") {
-        photoStrawberry.className = "";
-    } else {
-        photoStrawberry.className = "hide";
-    }
-});
-
-cherryLink.addEventListener("click", () => {
-    photoApple.className = "hide";
-    photoStrawberry.className = "hide";
-    if (photoCherry.className === "hide") {
-        photoCherry.className = "";
-    } else {
-        photoCherry.className = "hide";
-    }
-});
+//can use "click" instead of mouseenter if you want to active them by clicking
+appleLink.addEventListener("mouseenter", photoClick);
+strawberryLink.addEventListener("mouseenter", photoClick);
+cherryLink.addEventListener("mouseenter", photoClick);
