@@ -1,2 +1,2 @@
-run 'node "filename"' at console in the directory
+run 'node "filename"' at console in the related directory
 ex: (node objectManupilation.js)
