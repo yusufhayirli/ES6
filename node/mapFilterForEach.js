@@ -18,7 +18,7 @@ const result = a.map(x => {
     if (x % 2 ===0){
         return x*5;
     } else{
-        return x*3
+        return x*3;
     }
 });
 
